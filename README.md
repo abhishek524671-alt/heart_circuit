@@ -3,7 +3,7 @@
 # The Heart Circuit 🫀⚡
 
 ## Basic Details
-### Induvidual Team
+### Individual Team
 
 ### Team Members
 - Team Lead: Abhishek Jijo, Sahrdaya College of Engineering and Technology, Kodakara
@@ -103,7 +103,17 @@ consulted.*
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- Abhishek Jijo: [Specific contributions]
+- Abhishek Jijo: Sole developer — designed, built and shipped the entire project.
+  Implemented the logistic regression from scratch: feature standardisation, full-batch
+  gradient descent over 300 epochs, binary cross-entropy loss, and the per-feature
+  contribution ranking that drives the reasoning text. Hand-rolled every instrument in SVG
+  rather than using form inputs — the rotary re-dial knob, the draggable analog hour dial
+  with AM/PM, the bead-on-a-copper-trace sliders, the capacitor battery gauge (wired to the
+  live Battery Status API where the browser exposes it) and the animated loss chart. Wrote
+  the lunar-phase approximation and zodiac-element compatibility scoring that turn vibes
+  into feature vectors, the reasoning and roast generators, and the glassmorphism UI. Packaged
+  the whole thing as one self-contained HTML file with no build step, no dependencies and no
+  network calls.
 
 ---
 Made with ❤️ at TinkerHub Useless Projects
