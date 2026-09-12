@@ -35,16 +35,16 @@ For Software:
 # Installation
 No installation needed — it's a single static HTML file.
 ```bash
-git clone <your-repo-url>
-cd heart-circuit
+git clone https://github.com/abhishek524671-alt/heart_circuit.git
+cd heart_circuit
 ```
 
 # Run
 ```bash
 # just open it in a browser
-open heart-circuit.html   # macOS
-start heart-circuit.html  # Windows
-xdg-open heart-circuit.html  # Linux
+open index.html        # macOS
+start index.html       # Windows
+xdg-open index.html    # Linux
 ```
 Or double-click the file. No server, no dependencies, no npm install required.
 
@@ -52,18 +52,38 @@ Or double-click the file. No server, no dependencies, no npm install required.
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot of the training panel here)
-*The model training live on 60 synthetic past "closures," with a real-time loss curve.*
+![Training panel](screenshots/1-training.png)
+*The model training live on 60 synthetic past "closures," with a real-time loss curve falling
+over 300 epochs and a feature-importance breakdown showing which wires actually carry the current.*
 
-![Screenshot2](Add screenshot of the input dials here)
-*The input panel — hour-of-night clock, mood knob, moonlight/battery/zodiac fields — where you confess your situation to the machine.*
+![Input dials](screenshots/2-inputs.png)
+*The input panel — analog hour-of-night clock, rotary re-dial knob, copper wire sliders, a
+draggable capacitor for battery charge, and zodiac selects — where you confess your situation
+to the machine.*
 
-![Screenshot3](Add screenshot of the verdict screen here)
-*The final verdict: Close the Circuit or Leave It Open Tonight, plus a reasoning breakdown and a roast.*
+![Verdict screen](screenshots/3-verdict.png)
+*The final verdict: Close the Circuit or Leave It Open Tonight, with a reasoning breakdown
+naming the three features that moved the decision most, and a roast diagnostic.*
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Data (60 fictional past attempts) → logistic regression training → user inputs converted to feature vector → model inference → verdict (with a dash of randomness for good measure).*
+```mermaid
+flowchart TD
+    A[60 fictional past attempts<br/>8 features each] --> B[Standardize<br/>zero mean, unit variance]
+    B --> C[Logistic regression<br/>full-batch gradient descent<br/>300 epochs, BCE loss]
+    C --> D[Learned weights + bias]
+    C --> E[Live loss curve<br/>+ feature importances]
+    F[Your dials tonight<br/>hour, moon, battery,<br/>zodiac, re-dials...] --> G[Feature vector]
+    D --> H[Sigmoid inference]
+    G --> H
+    H --> I[Ranked feature contributions<br/>-> reasoning text]
+    I --> J[Verdict:<br/>Close the Circuit /<br/>Leave It Open Tonight]
+    K[Coin flip] -.->|overrides the model| J
+```
+
+*Data → training → inference → verdict. Every stage is real except the last arrow: the model
+genuinely trains and genuinely ranks which of your inputs mattered, then a coin flip decides
+the actual answer. The reasoning you get is a true explanation of a prediction that was never
+consulted.*
 
 ### Project Demo
 # Video
@@ -74,9 +94,7 @@ For Software:
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- Abhishek Jijo: [Specific contributions]
 
 ---
 Made with ❤️ at TinkerHub Useless Projects
