@@ -52,18 +52,27 @@ Or double-click the file. No server, no dependencies, no npm install required.
 For Software:
 
 # Screenshots (Add at least 3)
-![Training panel](screenshots/1-training.png)
-*The model training live on 60 synthetic past "closures," with a real-time loss curve falling
-over 300 epochs and a feature-importance breakdown showing which wires actually carry the current.*
+![Signal log](screenshots/1-signal-log.png)
+*The landing state. Stage 01 holds the model's entire worldview: sixty fictional past
+attempts to close the loop, each logged across eight signal lines — hour, day, hours since
+her reply, your average reply time, moonlight, zodiac compatibility, battery and how many
+times you reopened the chat — ending in CONNECTED or OPEN CIRCUIT.*
 
-![Input dials](screenshots/2-inputs.png)
-*The input panel — analog hour-of-night clock, rotary re-dial knob, copper wire sliders, a
-draggable capacitor for battery charge, and zodiac selects — where you confess your situation
-to the machine.*
+![Input dials, part one](screenshots/2-inputs-a.png)
+*Stage 03, upper half. The date defaults to tonight and recalculates day-of-week and
+moonlight when changed; the hour is an analog dial read off the system clock and draggable
+by hand; hours-since-her-reply and your average reply time are beads dragged along copper
+traces.*
 
-![Verdict screen](screenshots/3-verdict.png)
-*The final verdict: Close the Circuit or Leave It Open Tonight, with a reasoning breakdown
-naming the three features that moved the decision most, and a roast diagnostic.*
+![Input dials, part two](screenshots/2-inputs-b.png)
+*Stage 03, lower half. Battery is a draggable capacitor gauge — reading 39% live off the
+device here — beside a rotary knob counting chat re-dials, then the two zodiac selects and
+tonight's moonlight, which is computed and deliberately not editable.*
+
+![Verdict](screenshots/3-verdict.png)
+*The readout. "Leave it open tonight," 79.2% confidence, with a circuit analysis naming the
+three features that moved the number most — 99% moonlight, a zodiac compatibility of 88,
+and a 15-minute average reply time. Every reading is kept in the session log below.*
 
 # Diagrams
 ```mermaid
